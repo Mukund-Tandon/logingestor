@@ -21,7 +21,7 @@ func (c *HttpCollector) Start() error {
 	router.POST("/log", c.handleLogs)
 
 	// Start the HTTP server and block until it exits
-	err := router.Run("localhost:8080")
+	err := router.Run("0.0.0.0:8080")
 	if err != nil {
 		fmt.Println("Error starting HTTP server:", err)
 		return err
